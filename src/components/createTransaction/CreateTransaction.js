@@ -90,7 +90,6 @@ export default function CreateTransaction() {
                 </label>
                 <button className="btn">✔</button>
             </form>
-            <a href='https://www.freepik.com/vectors/right-tick'>Right tick vector created by mamewmy - www.freepik.com</a>
             {formError && <div className="error">{formError}</div>}
         </div>
     )
