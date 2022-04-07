@@ -1,4 +1,4 @@
-export const ITEM_NAMES = {
+export const LOCAL_STORAGE_ITEM_NAMES = {
     listOfIncome: "listOfIncome",
     listOfExpenses: "listOfExpenses"
 }
@@ -20,17 +20,17 @@ export const removeLocalStorateItem = (itemName) => { }
 
 // helpers
 export const setListOfIncomes = (val) => {
-    setLocalStorateItem(ITEM_NAMES.setListOfIncome, val)
+    setLocalStorateItem(LOCAL_STORAGE_ITEM_NAMES.setListOfIncome, val)
 }
 
 export const setListOfExpenses = (val) => {
-    setLocalStorateItem(ITEM_NAMES.setListOfExpenses, val)
+    setLocalStorateItem(LOCAL_STORAGE_ITEM_NAMES.setListOfExpenses, val)
 }
 
 export const getListOfIncomes = () => {
-    getLocalStorateItem(ITEM_NAMES.listOfIncome)
+    return getLocalStorateItem(LOCAL_STORAGE_ITEM_NAMES.listOfIncome)
 }
 
 export const getListOfExpenses = (val) => {
-    getLocalStorateItem(ITEM_NAMES.listOfExpenses)
+    return getLocalStorateItem(LOCAL_STORAGE_ITEM_NAMES.listOfExpenses)
 }

@@ -1,4 +1,6 @@
 import { createContext, useReducer, useEffect } from "react";
+// services
+import { getListOfExpenses, getListOfIncomes } from "../services/localStorageService";
 
 export const BudgetContext = createContext();
 
@@ -11,8 +13,8 @@ export const BudgetContextProvider = ({ children }) => {
     });
 
     useEffect(() => {
-        const incomeList = localStorage.getItem()
-        const expensesList = localStorage.getItem()
+        const incomeList = getListOfIncomes()
+        const expensesList = getListOfExpenses()
 
         dispatch({ type: "SET_INCOMES", payload: incomeList });
         dispatch({ type: "SET_EXPENSES", payload: expensesList });
