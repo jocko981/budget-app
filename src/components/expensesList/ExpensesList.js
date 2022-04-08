@@ -4,19 +4,19 @@ import "./ExpensesList.css";
 import { useBudgetContext } from "../../hooks/useBudgetContext";
 
 export default function ExpensesList() {
-    const { state } = useBudgetContext()
-    console.log(state, "state in ExpenseList");
+    const { listOfExpenses } = useBudgetContext()
+    console.log(listOfExpenses, "state in ExpenseList");
 
     return (
         <div className="expenses-list">
             <h2>EXPENSES</h2>
             <div className="expenses">
                 <ul>
-                    {[0, 1, 2, 3].map(user => (
-                        <li key={user.photoURL}>
-                            <span>Rent</span>
-                            <span>900</span>
-                            <span>% ovde</span>
+                    {listOfExpenses && listOfExpenses.map(item => (
+                        <li key={item}>
+                            <span className="description">{item.description}</span>
+                            <span className="value">-{item.value}</span>
+                            <span className="percentage">19%fix</span>
                         </li>
                     ))}
                 </ul>

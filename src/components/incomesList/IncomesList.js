@@ -4,18 +4,18 @@ import "./IncomesList.css";
 import { useBudgetContext } from "../../hooks/useBudgetContext";
 
 export default function IncomesList() {
-    const { state } = useBudgetContext()
-    console.log(state, "state in incomesList");
+    const { listOfIncome } = useBudgetContext()
+    console.log(listOfIncome, "state in incomesList");
 
     return (
         <div className="incomes-list">
-            <h2>EXPENSES</h2>
+            <h2>INCOMES</h2>
             <div className="incomes">
                 <ul>
-                    {[0, 1, 2].map(user => (
-                        <li key={user.photoURL}>
-                            <span>Plata</span>
-                            <span>+ 2000</span>
+                    {listOfIncome && listOfIncome.map(item => (
+                        <li key={item.id}>
+                            <span className="description">{item.description}</span>
+                            <span className="value">+{item.value}</span>
                         </li>
                     ))}
                 </ul>
