@@ -1,6 +1,8 @@
 .header {
     height: 300px;
     padding: 30px;
+    background-image: url("../../assets/images/bg-image.jpg");
+    /* background-repeat: no-repeat; */
 }
 
 .header header {
