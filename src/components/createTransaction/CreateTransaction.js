@@ -44,18 +44,22 @@ export default function CreateTransaction() {
             return
         }
 
+        const randomId = Math.random()
         const transaction = {
-            category,
+            id: randomId,
             description,
             value
         }
 
-        if (category === TRANSACTION_INCOME.value) {
+        if (category.value === TRANSACTION_INCOME.value) {
+
             addIncome(transaction)
+            setCategory(null)
             return
         }
-        if (category === TRANSACTION_EXPENSE.value) {
+        if (category.value === TRANSACTION_EXPENSE.value) {
             addExpense(transaction)
+            setCategory(null)
             return
         }
     }
@@ -66,8 +70,9 @@ export default function CreateTransaction() {
                 <label>
                     <span>Category:</span>
                     <Select
+                        value={category}
                         options={TRANSACTION_CATEGORIES}
-                        onChange={(option) => setCategory(option.value)}
+                        onChange={(option) => setCategory(option)}
                     />
                 </label>
                 <label>

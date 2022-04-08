@@ -20,11 +20,11 @@ export const removeLocalStorateItem = (itemName) => { }
 
 // helpers
 export const setListOfIncomes = (val) => {
-    setLocalStorateItem(LOCAL_STORAGE_ITEM_NAMES.setListOfIncome, val)
+    setLocalStorateItem(LOCAL_STORAGE_ITEM_NAMES.listOfIncome, val)
 }
 
 export const setListOfExpenses = (val) => {
-    setLocalStorateItem(LOCAL_STORAGE_ITEM_NAMES.setListOfExpenses, val)
+    setLocalStorateItem(LOCAL_STORAGE_ITEM_NAMES.listOfExpenses, val)
 }
 
 export const getListOfIncomes = () => {

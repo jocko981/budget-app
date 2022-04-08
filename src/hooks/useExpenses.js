@@ -8,16 +8,21 @@ export const useExpenses = () => {
 
     const addExpense = (newIncome) => {
         const response = getListOfExpenses()
-        console.log(response, 'addExpense response');
-        const newList = [...response, newIncome]
+        let newList
+        if (!response) {
+            newList = [newIncome]
+        } else {
+            newList = [...response, newIncome]
+        }
         setListOfExpenses(newList)
-
         dispatch({ type: "SET_EXPENSES", payload: newList })
     }
 
     const deleteExpense = (i) => {
         const response = getListOfExpenses()
+
         console.log(response, 'addExpense response');
+
         const newList = response.filter(item => item.id !== i)
         setListOfExpenses(newList)
 

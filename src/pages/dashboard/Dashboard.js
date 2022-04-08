@@ -1,6 +1,7 @@
 // styles
-import CreateTransaction from "../../components/createTransaction/CreateTransaction";
 import "./Dashboard.css";
+// components
+import CreateTransaction from "../../components/createTransaction/CreateTransaction";
 
 export default function Dashboard() {
     // const { user } = useAuthContext();
