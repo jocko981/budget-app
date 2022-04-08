@@ -3,7 +3,7 @@ import Select from "react-select";
 // styles
 import "./CreateTransaction.css";
 // helpers
-import { onInputMaxLengthCheck, onInputonlyNumbersCheck } from "../../helpers/helpers";
+import { onInputMaxLengthCheck } from "../../helpers/helpers";
 // constants
 import { TRANSACTION_CATEGORIES, TRANSACTION_INCOME, TRANSACTION_EXPENSE } from "../../constants/reactSelectOptions";
 // hooks
@@ -13,36 +13,27 @@ import { useIncomes } from "../../hooks/useIncomes";
 export default function CreateTransaction() {
     const { addExpense } = useExpenses()
     const { addIncome } = useIncomes()
-    const [isFilled, setIsFilled] = useState(false)
     // form fields
     const [category, setCategory] = useState("")
     const [description, setDescription] = useState("")
     const [value, setValue] = useState("")
     // errors
     const [formError, setFormError] = useState(null)
-    const [formCaughtErrorOnce, setFormCaughtErrorOnce] = useState(false)
 
     useEffect(() => {
-        if (formCaughtErrorOnce) {
-            if (category) {
-                setFormError(null)
-                return
-            }
+        if (category) {
+            setFormError(null)
+            return
         }
-    }, [formCaughtErrorOnce, description, category])
+
+    }, [category])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         setFormError(null)
 
         if (!category) {
-            setFormCaughtErrorOnce(true)
-            setFormError("Select category")
-            return
-        }
-        if (!description) {
-            setFormCaughtErrorOnce(true)
-            setFormError("Description needed")
+            setFormError("Please select category")
             return
         }
 
@@ -73,15 +64,14 @@ export default function CreateTransaction() {
         <div className="create-form">
             <form onSubmit={handleSubmit}>
                 <label>
-                    <span>Category:</span>
                     <Select
+                        placeholder={"Select..."}
                         value={category}
                         options={TRANSACTION_CATEGORIES}
                         onChange={(option) => setCategory(option)}
                     />
                 </label>
                 <label>
-                    <span>Description:</span>
                     <input
                         required
                         type="text"
@@ -89,15 +79,16 @@ export default function CreateTransaction() {
                         value={description}
                         maxLength={50}
                         onInput={onInputMaxLengthCheck}
+                        placeholder="Add Description"
                     />
                 </label>
                 <label>
-                    <span>Value:</span>
                     <input
                         required
                         type="text"
                         onChange={(e) => { setValue(e.target.value.replace(/[0]|[^0-9]*/, "")) }}
                         value={value}
+                        placeholder="Value"
                     />
                 </label>
                 <button className="btn">✔</button>
