@@ -50,9 +50,13 @@
 }
 
 .dashboard .transactions-list-wrap .transactions-list ul li .delete {
-    height: 100%;
+    display: none;
     padding: 0;
     margin: 0;
     background: var(--highlight-color-2);
     border-color: var(--white-color);
+}
+
+.dashboard .transactions-list-wrap .transactions-list ul li.hovered .delete {
+    display: inline;
 }
