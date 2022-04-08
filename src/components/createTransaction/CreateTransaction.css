@@ -1,0 +1,11 @@
+.create-transaction-form {
+    background: var(--secondary-color);
+    padding: 15px 0px;
+}
+
+.create-transaction-form form {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

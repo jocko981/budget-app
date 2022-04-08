@@ -9,9 +9,8 @@ export default function Dashboard() {
 
     return (
         <div className="dashboard">
-            Dashboard
             <CreateTransaction />
-            <div className="transaction-lists">
+            <div className="transactions-list-wrap">
                 <IncomesList />
                 <ExpensesList />
             </div>

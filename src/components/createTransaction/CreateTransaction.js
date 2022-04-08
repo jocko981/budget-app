@@ -61,7 +61,7 @@ export default function CreateTransaction() {
     }
 
     return (
-        <div className="create-form">
+        <div className="create-transaction-form">
             <form onSubmit={handleSubmit}>
                 <label>
                     <Select
