@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Select from "react-select";
 // styles
 import "./CreateTransaction.css";
+// helpers
+import { onInputMaxLengthCheck, onInputonlyNumbersCheck } from "../../helpers/helpers";
 // constants
 import { TRANSACTION_CATEGORIES, TRANSACTION_INCOME, TRANSACTION_EXPENSE } from "../../constants/reactSelectOptions";
 // hooks
@@ -27,7 +29,7 @@ export default function CreateTransaction() {
                 return
             }
         }
-    }, [formCaughtErrorOnce, category])
+    }, [formCaughtErrorOnce, description, category])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -51,15 +53,18 @@ export default function CreateTransaction() {
             value
         }
 
-        if (category.value === TRANSACTION_INCOME.value) {
-
+        if (category?.value === TRANSACTION_INCOME.value) {
             addIncome(transaction)
             setCategory(null)
+            setDescription("")
+            setValue("")
             return
         }
-        if (category.value === TRANSACTION_EXPENSE.value) {
+        if (category?.value === TRANSACTION_EXPENSE.value) {
             addExpense(transaction)
             setCategory(null)
+            setDescription("")
+            setValue("")
             return
         }
     }
@@ -82,14 +87,16 @@ export default function CreateTransaction() {
                         type="text"
                         onChange={(e) => setDescription(e.target.value)}
                         value={description}
+                        maxLength={50}
+                        onInput={onInputMaxLengthCheck}
                     />
                 </label>
                 <label>
                     <span>Value:</span>
                     <input
                         required
-                        type="number"
-                        onChange={(e) => setValue(e.target.value)}
+                        type="text"
+                        onChange={(e) => { setValue(e.target.value.replace(/[0]|[^0-9]*/, "")) }}
                         value={value}
                     />
                 </label>
