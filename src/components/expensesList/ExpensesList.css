@@ -1,4 +1,8 @@
-.transactions-list.expenses h2 {
-    color: rgb(221, 138, 138);
+.transactions-list.expenses h4 {
+    color: var(--orange-color);
     text-transform: uppercase;
+}
+
+.transactions-list.expenses ul li .value {
+    color: var(--orange-color);
 }

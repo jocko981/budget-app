@@ -1,4 +1,8 @@
-.transactions-list.incomes h2 {
-    color: rgb(138, 160, 221);
+.transactions-list.incomes h4 {
+    color: var(--blue-color);
     text-transform: uppercase;
+}
+
+.transactions-list.incomes ul li .value {
+    color: var(--blue-color);
 }

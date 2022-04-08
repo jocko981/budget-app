@@ -1,5 +1,5 @@
 .create-transaction-form {
-    background: var(--secondary-color);
+    background: var(--highlight-color-2);
     padding: 15px 0px;
 }
 
@@ -8,4 +8,12 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.create-transaction-form form input {
+    border-color: var(--highlight-color-1);
+}
+
+.create-transaction-form form input::placeholder {
+    color: var(--green-color);
 }

@@ -25,13 +25,17 @@
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
-    border-top: 2px solid var(--secondary-color);
+    border-top: 2px solid var(--highlight-color-1);
 }
 
 .dashboard .transactions-list-wrap .transactions-list ul li:last-child { 
-    border-bottom: 2px solid var(--secondary-color);
+    border-bottom: 2px solid var(--highlight-color-1);
 }
-/* --highlight-color */
+
 .dashboard .transactions-list-wrap .transactions-list ul li.highlight { 
-    background: var(--highlight-color);
+    background: var(--highlight-color-2);
+}
+
+.dashboard .transactions-list-wrap .transactions-list ul li .description {
+    color: var(--green-color);
 }

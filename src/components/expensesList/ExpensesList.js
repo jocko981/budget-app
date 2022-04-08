@@ -9,7 +9,7 @@ export default function ExpensesList() {
 
     return (
         <div className="transactions-list expenses">
-            <h2>EXPENSES</h2>
+            <h4>EXPENSES</h4>
             <ul>
                 {listOfExpenses && listOfExpenses.map((item, i) => {
                     if (i % 2 === 0) {
