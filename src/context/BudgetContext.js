@@ -10,6 +10,8 @@ export const BudgetContextProvider = ({ children }) => {
         dataIsReady: false,
         listOfIncome: null,
         listOfExpenses: null,
+        totalIncome: 0,
+        totalExpense: 0
     });
 
     useEffect(() => {
