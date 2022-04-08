@@ -48,3 +48,11 @@
 .dashboard .transactions-list-wrap .transactions-list ul li .description {
     color: var(--green-color);
 }
+
+.dashboard .transactions-list-wrap .transactions-list ul li .delete {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: var(--highlight-color-2);
+    border-color: var(--white-color);
+}

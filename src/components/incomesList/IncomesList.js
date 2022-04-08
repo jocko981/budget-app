@@ -1,11 +1,14 @@
+import { useState } from "react";
 // styles
 import "./IncomesList.css";
 // hooks
 import { useBudgetContext } from "../../hooks/useBudgetContext";
+import { useIncomes } from "../../hooks/useIncomes";
 
 export default function IncomesList() {
     const { listOfIncome } = useBudgetContext()
-    console.log(listOfIncome, "state in incomesList");
+    const { deleteIncome } = useIncomes()
+    const [style, setStyle] = useState({ display: 'none' });
 
     return (
         <div className="transactions-list incomes">
@@ -15,14 +18,20 @@ export default function IncomesList() {
                     if (i % 2 === 0) {
                         return (
                             <li key={item.id}>
-                                <span className="description">{item.description}</span>
+                                <div>
+                                    <button className="delete">❌</button>
+                                    <span className="description">{item.description}</span>
+                                </div>
                                 <span className="value">+{item.value}</span>
                             </li>
                         )
                     } else {
                         return (
                             <li className="highlight" key={item.id}>
-                                <span className="description">{item.description}</span>
+                                <div>
+                                    <button className="delete">❌</button>
+                                    <span className="description">{item.description}</span>
+                                </div>
                                 <span className="value">+{item.value}</span>
                             </li>
                         )
