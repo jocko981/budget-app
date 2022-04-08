@@ -18,7 +18,7 @@ export default function ExpensesList() {
                                 <span className="description">{item.description}</span>
                                 <div>
                                     <span className="value">-{item.value}</span>
-                                    <span className="percentage">19%fix</span>
+                                    <span className="percentage">19%</span>
                                 </div>
                             </li>
                         )
@@ -28,7 +28,7 @@ export default function ExpensesList() {
                                 <span className="description">{item.description}</span>
                                 <div>
                                     <span className="value">-{item.value}</span>
-                                    <span className="percentage">19%fix</span>
+                                    <span className="percentage">19%</span>
                                 </div>
                             </li>
                         )

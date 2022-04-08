@@ -6,3 +6,10 @@
 .transactions-list.expenses ul li .value {
     color: var(--orange-color);
 }
+
+.transactions-list.expenses ul li .percentage {
+    background: var(--orange-color-light);
+    padding: 3px 6px;
+    font-size: 0.6em;
+    border-radius: 5px;
+}
