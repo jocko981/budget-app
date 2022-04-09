@@ -65,7 +65,9 @@ export default function CreateTransaction() {
             <form onSubmit={handleSubmit}>
                 <label>
                     <Select
+                        className="option"
                         placeholder={"Select..."}
+                        isSearchable={false}
                         value={category}
                         options={TRANSACTION_CATEGORIES}
                         onChange={(option) => setCategory(option)}
@@ -73,6 +75,7 @@ export default function CreateTransaction() {
                 </label>
                 <label>
                     <input
+                        className="description"
                         required
                         type="text"
                         onChange={(e) => setDescription(e.target.value)}
@@ -84,7 +87,7 @@ export default function CreateTransaction() {
                 </label>
                 <label>
                     <input
-                        required
+                        className="value"
                         type="text"
                         onChange={(e) => { setValue(e.target.value.replace(/[0]|[^0-9]*/, "")) }}
                         value={value}
