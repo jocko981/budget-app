@@ -61,11 +61,13 @@ export default function CreateTransaction() {
     }
 
     return (
-        <div className="create-transaction-form">
+        <div className="create-transaction">
             <form onSubmit={handleSubmit}>
                 <label>
                     <Select
-                        className="option"
+                        className="react-select"
+                        classNamePrefix="react-select"
+                        // defaultValue={"for instance: TRANSACTION_EXPENSE"}
                         placeholder={"Select..."}
                         isSearchable={false}
                         value={category}

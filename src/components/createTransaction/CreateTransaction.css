@@ -1,19 +1,32 @@
-.create-transaction-form {
+.create-transaction {
     background: var(--highlight-color-2);
     padding: 15px 0px;
 }
 
-.create-transaction-form form {
+.create-transaction form {
     margin: auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.create-transaction-form form input {
+.create-transaction form input {
     border-color: var(--highlight-color-1);
 }
 
-.create-transaction-form form input::placeholder {
+.create-transaction form input::placeholder {
     color: var(--green-color);
+}
+
+.create-transaction form .react-select__placeholder {
+    color: var(--green-color);
+}
+
+.create-transaction form .react-select {
+    height: 100%;
+}
+
+.create-transaction form .react-select__control {
+    height: 100%;
+    border-color: var(--light-border);
 }
