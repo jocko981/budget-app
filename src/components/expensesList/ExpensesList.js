@@ -2,10 +2,11 @@
 import "./ExpensesList.css";
 // hooks
 import { useBudgetContext } from "../../hooks/useBudgetContext";
+import { useExpenses } from "../../hooks/useExpenses";
 
 export default function ExpensesList() {
     const { listOfExpenses } = useBudgetContext()
-    console.log(listOfExpenses, "state in ExpenseList");
+    const { deleteExpense } = useExpenses()
 
     return (
         <div className="transactions-list expenses">
@@ -19,7 +20,7 @@ export default function ExpensesList() {
                                 onMouseLeave={e => e.target.classList.remove("hovered")}
                             >
                                 <div>
-                                    <button className="delete">❌</button>
+                                    <button className="delete" onClick={() => deleteExpense(item.id)}>❌</button>
                                     <span className="description">{item.description}</span>
                                 </div>
                                 <div>
@@ -35,7 +36,7 @@ export default function ExpensesList() {
                                 onMouseLeave={e => e.target.classList.remove("hovered")}
                             >
                                 <div>
-                                    <button className="delete">❌</button>
+                                    <button className="delete" onClick={() => deleteExpense(item.id)}>❌</button>
                                     <span className="description">{item.description}</span>
                                 </div>
                                 <div>

@@ -5,7 +5,7 @@ export const LOCAL_STORAGE_ITEM_NAMES = {
 
 export const setLocalStorateItem = (itemName, itemValue) => {
     const item = JSON.stringify(itemValue)
-    if (typeof item !== "undefined" && item !== "null" && item !== "[object Object]" | item !== "") {
+    if (typeof item !== "undefined" && item !== "[object Object]" | item !== "") {
         localStorage.setItem(itemName, item)
     }
 }

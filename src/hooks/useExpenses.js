@@ -20,10 +20,9 @@ export const useExpenses = () => {
 
     const deleteExpense = (i) => {
         const response = getListOfExpenses()
+        let newList
 
-        console.log(response, 'addExpense response');
-
-        const newList = response.filter(item => item.id !== i)
+        newList = response.filter(item => item.id !== i)
         setListOfExpenses(newList)
 
         dispatch({ type: "SET_EXPENSES", payload: newList })

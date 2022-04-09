@@ -1,4 +1,3 @@
-import { useState } from "react";
 // styles
 import "./IncomesList.css";
 // hooks
@@ -8,7 +7,6 @@ import { useIncomes } from "../../hooks/useIncomes";
 export default function IncomesList() {
     const { listOfIncome } = useBudgetContext()
     const { deleteIncome } = useIncomes()
-    const [style, setStyle] = useState({ display: "none" });
 
     return (
         <div className="transactions-list incomes">
@@ -22,7 +20,7 @@ export default function IncomesList() {
                                 onMouseLeave={e => e.target.classList.remove("hovered")}
                             >
                                 <div>
-                                    <button className="delete">❌</button>
+                                    <button className="delete" onClick={() => deleteIncome(item.id)}>❌</button>
                                     <span className="description">{item.description}</span>
                                 </div>
                                 <span className="value">+{item.value}</span>
@@ -35,7 +33,7 @@ export default function IncomesList() {
                                 onMouseLeave={e => e.target.classList.remove("hovered")}
                             >
                                 <div>
-                                    <button className="delete">❌</button>
+                                    <button className="delete" onClick={() => deleteIncome(item.id)}>❌</button>
                                     <span className="description">{item.description}</span>
                                 </div>
                                 <span className="value">+{item.value}</span>

@@ -20,10 +20,9 @@ export const useIncomes = () => {
 
     const deleteIncome = (i) => {
         const response = getListOfIncomes()
+        let newList
 
-        console.log(response, 'addExpense response');
-
-        const newList = response.filter(item => item.id !== i)
+        newList = response.filter(item => item.id !== i)
         setListOfIncomes(newList)
 
         dispatch({ type: "SET_INCOMES", payload: newList })
