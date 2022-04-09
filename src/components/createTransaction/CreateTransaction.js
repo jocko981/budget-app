@@ -13,6 +13,7 @@ import { useIncomes } from "../../hooks/useIncomes";
 export default function CreateTransaction() {
     const { addExpense } = useExpenses()
     const { addIncome } = useIncomes()
+    const [isFormFilled, setIsFormFilled] = useState(false)
     // form fields
     const [category, setCategory] = useState("")
     const [description, setDescription] = useState("")
@@ -23,10 +24,14 @@ export default function CreateTransaction() {
     useEffect(() => {
         if (category) {
             setFormError(null)
-            return
+        }
+        if (category && description && value) {
+            setIsFormFilled(true)
+        } else {
+            setIsFormFilled(false)
         }
 
-    }, [category])
+    }, [category, description, value])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -90,13 +95,14 @@ export default function CreateTransaction() {
                 <label>
                     <input
                         className="value"
+                        required
                         type="text"
                         onChange={(e) => { setValue(e.target.value.replace(/[0]|[^0-9]*/, "")) }}
                         value={value}
                         placeholder="Value"
                     />
                 </label>
-                <button className="btn">✔</button>
+                {isFormFilled ? <button className="btn">✔</button> : <button className="btn btn-disabled" disabled>✔</button>}
             </form>
             {formError && <div className="error">{formError}</div>}
         </div>

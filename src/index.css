@@ -60,6 +60,10 @@ a {
   border: 0;
 }
 
+.btn-disabled {
+  opacity: 0.3;
+}
+
 /* forms */
 input,
 textarea {
@@ -87,4 +91,8 @@ input::placeholder, textarea::placeholder {
   border-radius: 4px;
   padding: 8px;
   margin: 10px 0;
+}
+
+.hidden {
+  display: none;
 }
