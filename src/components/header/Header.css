@@ -2,9 +2,57 @@
     height: 300px;
     padding: 30px;
     background-image: url("../../assets/images/bg-image.jpg");
-    /* background-repeat: no-repeat; */
 }
 
 .header header {
     text-align: center;
+}
+
+.header h3 {
+    font-size: 3em;
+    padding: 10px 0;
+}
+
+.header .income-expense {
+    max-width: 400px;
+    margin: auto;
+}
+
+.header .income-expense .total {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+.header .income-expense .total .flex-wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .income-expense .total .flex-wrap .text {
+    text-transform: uppercase;
+}
+
+.header .income-expense .total .percentage {
+    margin: auto;
+    background: var(--orange-color-medium);
+    padding: 3px 6px;
+    font-size: 0.72em;
+    border-radius: 5px;
+}
+
+.header .income-expense .total span {
+    margin: auto 0;
+}
+
+.header .income-expense .total.income {
+    background: var(--blue-color);
+    color: var(--white-color);
+    padding: 15px;
+}
+
+.header .income-expense .total.expense {
+    background: var(--orange-color);
+    color: var(--white-color);
+    padding: 15px;
+    margin-top: 10px;
 }
