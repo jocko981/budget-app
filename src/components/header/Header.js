@@ -2,6 +2,8 @@
 import "./Header.css";
 // hooks
 import { useBudgetContext } from "../../hooks/useBudgetContext";
+// helpers
+import { calcExpensePercentage } from "../../helpers/helpers";
 
 export default function Header() {
     const { totalIncome, totalExpense } = useBudgetContext()
@@ -23,7 +25,7 @@ export default function Header() {
             const date = new Date()
             const month = date.toLocaleString("default", { month: "long" })
             const year = date.getFullYear()
-            return `Budget for ${month} in ${year}:`
+            return `Awailable Budget in ${month} in ${year}:`
         }
 
         return "Let's calculate your budget!"
@@ -43,15 +45,15 @@ export default function Header() {
                 <div className="total income">
                     <div className="flex-wrap">
                         <span className="text">income</span>
-                        <span className="value">-100</span>
+                        <span className="value">+{totalIncome}</span>
                     </div>
                 </div>
-                <div className="total expense">
+                <div className="total expenses">
                     <div className="flex-wrap">
                         <span className="text">expense</span>
-                        <span className="value">-100</span>
+                        <span className="value">-{totalExpense}</span>
                     </div>
-                    <span className="percentage">19%</span>
+                    <span className="percentage">{calcExpensePercentage(totalIncome, totalExpense)}</span>
                 </div>
             </div>
         </div>

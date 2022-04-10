@@ -1,6 +1,6 @@
 .header {
     height: 300px;
-    padding: 30px;
+    padding: 15px;
     background-image: url("../../assets/images/bg-image.jpg");
 }
 
@@ -14,7 +14,7 @@
 }
 
 .header .income-expense {
-    max-width: 400px;
+    width: clamp(280px, 80%, 500px);
     margin: auto;
 }
 
@@ -50,7 +50,7 @@
     padding: 15px;
 }
 
-.header .income-expense .total.expense {
+.header .income-expense .total.expenses {
     background: var(--orange-color);
     color: var(--white-color);
     padding: 15px;

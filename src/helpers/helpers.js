@@ -8,3 +8,9 @@ export const onInputMaxLengthCheck = (e) => {
 export const sumOfArrayOfNumbers = (arr) => {
     return arr.reduce((a, b) => a + b, 0)
 }
+
+
+export const calcExpensePercentage = (totalIncome, expense) => {
+    return "%"
+}
+

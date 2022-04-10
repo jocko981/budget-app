@@ -3,6 +3,8 @@ import "./ExpensesList.css";
 // hooks
 import { useBudgetContext } from "../../hooks/useBudgetContext";
 import { useExpenses } from "../../hooks/useExpenses";
+// helpers
+import { calcExpensePercentage } from "../../helpers/helpers";
 
 export default function ExpensesList() {
     const { listOfExpenses } = useBudgetContext()
