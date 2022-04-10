@@ -21,8 +21,11 @@ export const useExpenses = () => {
     const deleteExpense = (i) => {
         const response = getListOfExpenses()
         let newList
-
         newList = response.filter(item => item.id !== i)
+        if (newList.length < 1) {
+            newList = null
+        }
+
         setListOfExpenses(newList)
 
         dispatch({ type: "SET_EXPENSES", payload: newList })
