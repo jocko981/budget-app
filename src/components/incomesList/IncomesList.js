@@ -28,7 +28,7 @@ export default function IncomesList() {
                         )
                     } else {
                         return (
-                            <li className="highlight" key={item.id}
+                            <li className="highlighted" key={item.id}
                                 onMouseEnter={e => e.target.classList.add("hovered")}
                                 onMouseLeave={e => e.target.classList.remove("hovered")}
                             >

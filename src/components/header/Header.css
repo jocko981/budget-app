@@ -26,6 +26,10 @@
     grid-template-columns: 4fr 1fr;
 }
 
+.header .income-expense .total span {
+    margin: auto 0;
+}
+
 .header .income-expense .total .flex-wrap {
     display: flex;
     justify-content: space-between;
@@ -33,18 +37,6 @@
 
 .header .income-expense .total .flex-wrap .text {
     text-transform: uppercase;
-}
-
-.header .income-expense .total .percentage {
-    margin: auto;
-    background: var(--orange-color-medium);
-    padding: 3px 6px;
-    font-size: 0.72em;
-    border-radius: 5px;
-}
-
-.header .income-expense .total span {
-    margin: auto 0;
 }
 
 .header .income-expense .total.income {
@@ -58,4 +50,12 @@
     color: var(--white-color);
     padding: 15px;
     margin-top: 10px;
+}
+
+.header .income-expense .total.expenses .percentage {
+    margin: auto;
+    background: var(--orange-color-medium);
+    padding: 3px 6px;
+    font-size: 0.72em;
+    border-radius: 5px;
 }

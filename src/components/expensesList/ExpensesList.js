@@ -37,7 +37,7 @@ export default function ExpensesList() {
                     } else {
                         return (
                             <li key={item.id}
-                                className="grid highlight"
+                                className="grid highlighted"
                                 onMouseEnter={e => e.target.classList.add("hovered")}
                                 onMouseLeave={e => e.target.classList.remove("hovered")}
                             >

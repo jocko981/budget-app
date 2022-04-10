@@ -37,7 +37,7 @@
     border-bottom: 2px solid var(--highlight-color-1);
 }
 
-.dashboard .transactions-list-wrap .transactions-list ul li.highlight { 
+.dashboard .transactions-list-wrap .transactions-list ul li.highlighted { 
     background: var(--highlight-color-2);
 }
 
