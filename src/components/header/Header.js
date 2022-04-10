@@ -9,7 +9,6 @@ export default function Header() {
     const { totalIncome, totalExpense } = useBudgetContext()
     const formatedTotalIncome = formatNumberAsCurrency(totalIncome)
     const formatedTotalExpenses = formatNumberAsCurrency(totalExpense)
-    console.log(formatedTotalExpenses);
 
     const renderBudget = () => {
         const budget = formatNumberAsCurrency(totalIncome - totalExpense)

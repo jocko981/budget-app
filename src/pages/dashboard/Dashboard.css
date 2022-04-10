@@ -19,6 +19,7 @@
 
 .dashboard .transactions-list-wrap .transactions-list ul {
     margin-top: 20px;
+    border-top: 2px solid var(--highlight-color-1);
 }
 
 .dashboard .transactions-list-wrap .transactions-list ul li {
@@ -26,6 +27,10 @@
     display: flex;
     justify-content: space-between;
     border-top: 2px solid var(--highlight-color-1);
+}
+
+.dashboard .transactions-list-wrap .transactions-list ul li:first-child { 
+    border-top: none;
 }
 
 .dashboard .transactions-list-wrap .transactions-list ul li:last-child { 
