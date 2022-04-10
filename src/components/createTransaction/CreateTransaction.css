@@ -15,6 +15,14 @@
     margin: 5px 10px;
 }
 
+.create-transaction form .description {
+    width: 300px;
+}
+
+.create-transaction form .value {
+    width: 150px;
+}
+
 .create-transaction form .btn {
     border-radius: 50%;
     margin: auto 0;
@@ -23,6 +31,7 @@
 
 .create-transaction form .react-select {
     height: 100%;
+    width: 150px;
 }
 
 .create-transaction form .react-select__placeholder {
@@ -46,7 +55,6 @@
 
 .create-transaction form .react-select__indicators {
     background: var(--green-color);
-    /* border: 1px solid var(--light-border); */
     border-radius: 0 5px 5px 0;
 }
 
