@@ -7,7 +7,7 @@ import { useExpenses } from "../../hooks/useExpenses";
 import { calcExpensePercentage } from "../../helpers/helpers";
 
 export default function ExpensesList() {
-    const { listOfExpenses } = useBudgetContext()
+    const { listOfExpenses, totalIncome } = useBudgetContext()
     const { deleteExpense } = useExpenses()
 
     return (
@@ -27,7 +27,7 @@ export default function ExpensesList() {
                                 </div>
                                 <div>
                                     <span className="value">-{item.value}</span>
-                                    <span className="percentage">19%</span>
+                                    <span className="percentage">{calcExpensePercentage(totalIncome, parseInt(item.value))}%</span>
                                 </div>
                             </li>
                         )
@@ -43,7 +43,7 @@ export default function ExpensesList() {
                                 </div>
                                 <div>
                                     <span className="value">-{item.value}</span>
-                                    <span className="percentage">19%</span>
+                                    <span className="percentage">{calcExpensePercentage(totalIncome, parseInt(item.value))}%</span>
                                 </div>
                             </li>
                         )

@@ -2,6 +2,9 @@
     height: 300px;
     padding: 15px;
     background-image: url("../../assets/images/bg-image.jpg");
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .header header {
@@ -15,7 +18,7 @@
 
 .header .income-expense {
     width: clamp(280px, 80%, 500px);
-    margin: auto;
+    margin: 0 auto;
 }
 
 .header .income-expense .total {

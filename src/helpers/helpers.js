@@ -11,6 +11,14 @@ export const sumOfArrayOfNumbers = (arr) => {
 
 
 export const calcExpensePercentage = (totalIncome, expense) => {
-    return "%"
+    if (expense && totalIncome != 0) {
+        const x = ((100 * expense) / totalIncome).toFixed(0)
+        return x
+    }
 }
 
+export const formatNumberAsCurrency = (num) => {
+    const currency = num.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+
+    return currency
+}

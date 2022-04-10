@@ -43,6 +43,8 @@ export const useIncomes = () => {
         if (newList?.length) {
             const incomesArr = newList.map(item => parseInt(item.value))
             totalIncome = sumOfArrayOfNumbers(incomesArr)
+        } else {
+            totalIncome = 0
         }
 
         dispatch({ type: "SET_INCOMES", payload: newList })

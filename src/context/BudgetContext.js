@@ -19,8 +19,8 @@ export const BudgetContextProvider = ({ children }) => {
     useEffect(() => {
         const incomeList = getListOfIncomes()
         const expensesList = getListOfExpenses()
-        let totalIncome
-        let totalExpense
+        let totalIncome = 0
+        let totalExpense = 0
 
         if (incomeList?.length) {
             const incomesArr = incomeList.map(item => parseInt(item.value))
