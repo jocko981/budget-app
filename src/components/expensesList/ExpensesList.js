@@ -18,33 +18,39 @@ export default function ExpensesList() {
                     if (i % 2 === 0) {
                         return (
                             <li key={item.id}
+                                className="grid"
                                 onMouseEnter={e => e.target.classList.add("hovered")}
                                 onMouseLeave={e => e.target.classList.remove("hovered")}
                             >
-                                <div>
-                                    <button className="delete" onClick={() => deleteExpense(item.id)}>❌</button>
-                                    <span className="description">{item.description}</span>
+                                <div className="flex-wrap">
+                                    <div>
+                                        <button className="delete" onClick={() => deleteExpense(item.id)}>❌</button>
+                                        <span className="description">{item.description}</span>
+                                    </div>
+                                    <div>
+                                        <span className="value">-{item.value}</span>
+                                    </div>
                                 </div>
-                                <div>
-                                    <span className="value">-{item.value}</span>
-                                    <span className="percentage">{calcExpensePercentage(totalIncome, parseInt(item.value))}%</span>
-                                </div>
+                                {totalIncome ? <span className="percentage">{calcExpensePercentage(totalIncome, parseInt(item.value))}%</span> : ""}
                             </li>
                         )
                     } else {
                         return (
-                            <li className="highlight" key={item.id}
+                            <li key={item.id}
+                                className="grid highlight"
                                 onMouseEnter={e => e.target.classList.add("hovered")}
                                 onMouseLeave={e => e.target.classList.remove("hovered")}
                             >
-                                <div>
-                                    <button className="delete" onClick={() => deleteExpense(item.id)}>❌</button>
-                                    <span className="description">{item.description}</span>
+                                <div className="flex-wrap">
+                                    <div>
+                                        <button className="delete" onClick={() => deleteExpense(item.id)}>❌</button>
+                                        <span className="description">{item.description}</span>
+                                    </div>
+                                    <div>
+                                        <span className="value">-{item.value}</span>
+                                    </div>
                                 </div>
-                                <div>
-                                    <span className="value">-{item.value}</span>
-                                    <span className="percentage">{calcExpensePercentage(totalIncome, parseInt(item.value))}%</span>
-                                </div>
+                                {totalIncome ? <span className="percentage">{calcExpensePercentage(totalIncome, parseInt(item.value))}%</span> : ""}
                             </li>
                         )
                     }

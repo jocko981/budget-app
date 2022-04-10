@@ -57,7 +57,7 @@ export default function Header() {
                         <span className="text">expenses</span>
                         <span className="value">{totalExpense != 0 ? `-${formatedTotalExpenses}` : formatedTotalExpenses}</span>
                     </div>
-                    {totalExpense ? <span className="percentage">{calcExpensePercentage(totalIncome, totalExpense)}%</span> : ""}
+                    {totalIncome ? <span className="percentage">{calcExpensePercentage(totalIncome, totalExpense)}%</span> : ""}
                 </div>
             </div>
         </div>
