@@ -18,13 +18,8 @@ export default function CreateTransaction() {
     const [category, setCategory] = useState("")
     const [description, setDescription] = useState("")
     const [value, setValue] = useState("")
-    // errors
-    const [formError, setFormError] = useState(null)
 
     useEffect(() => {
-        if (category) {
-            setFormError(null)
-        }
         if (category && description && value) {
             setIsFormFilled(true)
         } else {
@@ -35,12 +30,6 @@ export default function CreateTransaction() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        setFormError(null)
-
-        if (!category) {
-            setFormError("Please select category")
-            return
-        }
 
         const randomId = Math.random()
         const transaction = {
@@ -104,7 +93,6 @@ export default function CreateTransaction() {
                 </label>
                 {isFormFilled ? <button className="btn">✔</button> : <button className="btn btn-disabled" disabled>✔</button>}
             </form>
-            {formError && <div className="error">{formError}</div>}
         </div>
     )
 }

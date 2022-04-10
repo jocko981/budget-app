@@ -34,6 +34,10 @@
     width: 150px;
 }
 
+.create-transaction form .react-select__single-value {
+    color: var(--dark-color);
+}
+
 .create-transaction form .react-select__placeholder {
     color: var(--green-color);
 }
